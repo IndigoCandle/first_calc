@@ -4,15 +4,29 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def multiply(first_num,second_num):
-    if first_num.isdigit() and second_num.isdigit:
-        return first_num * second_num
-    else:
-        print("Invalid - values must be numbers")
-        return None
-def subtract(first_num,second_num):
-    if first_num.isdigit() and second_num.isdigit:
+
+def AllOp(first_num,second_num, operand):
+    if operand == '+':
+        return first_num + second_num
+    elif operand == '-':
         return first_num - second_num
+    elif operand == '*':
+        return first_num * second_num
+    elif operand == '/' and second_num != 0:
+        return first_num / second_num
+    elif operand == '**':
+        return first_num ** second_num
     else:
-        print("Invalid - values must be numbers")
-        return None
+        print("invalid input")
+
+def calculator():
+    first_num = input()
+    operand = input()
+    second_num = input()
+    first_num = float(first_num)
+    second_num = float(second_num)
+    result = AllOp(first_num,second_num,operand)
+    print(first_num + " " + operand + " " + second_num + " = " + result)
+
+def main():
+    calculator()
