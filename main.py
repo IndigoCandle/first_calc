@@ -9,8 +9,8 @@ This program calculates the resukt of an operation on two numbers entered by the
 '''
 
 
-# The AllOp is in charge of performing the calculations and error handling
-def AllOp(first_num, second_num, operand):
+# The all_op is in charge of performing the calculations and error handling
+def all_op(first_num, second_num, operand):
     if operand == '+':
         return first_num + second_num
     elif operand == '-':
@@ -35,7 +35,7 @@ def calculator():
         first_num = float(input("Enter first number: "))
         operand = input("Enter an operand (+, -, *, /, **): ")
         second_num = float(input("Enter second number: "))
-        result = AllOp(first_num, second_num, operand)
+        result = all_op(first_num, second_num, operand)
         print(f"{first_num} {operand} {second_num} = {result}")
     except ValueError:
         print("Invalid input: Please enter numbers only.")
