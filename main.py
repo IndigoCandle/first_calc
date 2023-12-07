@@ -1,10 +1,15 @@
-# This is a sample Python script.
+'''
+File Name: calculator.py
+Name: Rom Yannay
+ID: 326450228
+Date: 07/12/2023
+Description:
+This program calculates the resukt of an operation on two numbers entered by the user,
+ based on the operand while making sure all inputs are valid.
+'''
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-
-
+# The AllOp is in charge of performing the calculations and error handling
 def AllOp(first_num, second_num, operand):
     if operand == '+':
         return first_num + second_num
@@ -22,6 +27,9 @@ def AllOp(first_num, second_num, operand):
     else:
         return "Invalid operand"
 
+
+# This is the calculator function. Its purpose is to read the input from the user and send them over for calculation.
+# it also checks for invalid inputs
 def calculator():
     try:
         first_num = float(input("Enter first number: "))
@@ -32,11 +40,14 @@ def calculator():
     except ValueError:
         print("Invalid input: Please enter numbers only.")
 
+
+# the main function runs as long as the user wants to keep calculating.
 def main():
     while True:
         calculator()
         if input("Do another calculation? (yes/no): ").lower() != 'yes':
             break
+
 
 if __name__ == "__main__":
     main()
