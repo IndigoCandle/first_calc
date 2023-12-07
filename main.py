@@ -5,28 +5,38 @@
 
 
 
-def AllOp(first_num,second_num, operand):
+def AllOp(first_num, second_num, operand):
     if operand == '+':
         return first_num + second_num
     elif operand == '-':
         return first_num - second_num
     elif operand == '*':
         return first_num * second_num
-    elif operand == '/' and second_num != 0:
-        return first_num / second_num
+    elif operand == '/':
+        if second_num != 0:
+            return first_num / second_num
+        else:
+            return "Error: Division by zero"
     elif operand == '**':
         return first_num ** second_num
     else:
-        print("invalid input")
+        return "Invalid operand"
 
 def calculator():
-    first_num = input()
-    operand = input()
-    second_num = input()
-    first_num = float(first_num)
-    second_num = float(second_num)
-    result = AllOp(first_num,second_num,operand)
-    print(first_num + " " + operand + " " + second_num + " = " + result)
+    try:
+        first_num = float(input("Enter first number: "))
+        operand = input("Enter an operand (+, -, *, /, **): ")
+        second_num = float(input("Enter second number: "))
+        result = AllOp(first_num, second_num, operand)
+        print(f"{first_num} {operand} {second_num} = {result}")
+    except ValueError:
+        print("Invalid input: Please enter numbers only.")
 
 def main():
-    calculator()
+    while True:
+        calculator()
+        if input("Do another calculation? (yes/no): ").lower() != 'yes':
+            break
+
+if __name__ == "__main__":
+    main()
